@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../hojas-de-estilo/TareaFormulario.css';
+import '../hojas-de-estilos/TareaFormulario.css';
 import { v4 as uuidv4 } from 'uuid';
 
 function TareaFormulario(props) {

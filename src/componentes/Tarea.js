@@ -1,21 +1,22 @@
-import './App.css';
-import freeCodeCampLogo from './imagenes/freecodecamp-logo.png';
-import ListaDeTareas from './componentes/ListaDeTareas';
+import React from 'react';
+import '../hojas-de-estilos/Tarea.css';
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
-function App() {
+function Tarea({ id, texto, completada, completarTarea, eliminarTarea }) {
   return (
-    <div className='aplicacion-tareas'>
-      <div className='freecodecamp-logo-contenedor'>
-        <img 
-          src={freeCodeCampLogo} 
-          className='freecodecamp-logo' />
+    <div className={completada ? 'tarea-contenedor completada' : 'tarea-contenedor'}>
+      <div 
+        className='tarea-texto'
+        onClick={() => completarTarea(id)}>
+        {texto}
       </div>
-      <div className='tareas-lista-principal'>
-        <h1>Mis Tareas</h1>
-        <ListaDeTareas />
+      <div 
+        className='tarea-contenedor-iconos'
+        onClick={() => eliminarTarea(id)}>
+        <AiOutlineCloseCircle className='tarea-icono' />
       </div>
     </div>
-  );
+  );    
 }
 
-export default App;
+export default Tarea;
